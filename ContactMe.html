@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Me</title>
+    </head>
+    <body>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JevzpiqfZwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <form name="feedback" action="">
+            First Name: <input type="text" name="fname" placeholder="anonymous" required>
+            Last Name: <input type="text" name="lname" placeholder="anonymous" required>
+            <br>
+            Birthday: <input type="date" name="bday">
+            <br>
+            Email: <input type="email" name="mail" placeholder="name@domain.com">
+            <br>
+            Will you recommend this site?
+            <br>
+            <input type="radio" name="rec" value="yes">Yes
+            <input type="radio" name="rec" value="no">No
+            <br>
+            Select your favorite website:
+            <br>
+            <select name="website" size="4">
+                <option value="google">Google</option>
+                <option value="fb">FaceBook</option>
+                <option value="twitter">Twitter</option>
+                <option value="time">Time</option>
+                <option value="yt">YouTube</option>
+                <option value="pinterest">Pinterest</option>
+                <option value="netflix">Netflix</option>
+                <option value="hulu">Hulu</option>
+            </select>
+            <br>
+            Rate the website:
+            1<input type="range" name="rating" min="1" max="10">10
+            <br>
+            What color would you like to see featured on this website:
+            <br>
+            <input type="color" name="color">
+            <br>
+            Which day(s) do you spend the most time online?
+            <br>
+            <input type="checkbox" name="days" value="m">Monday
+            <input type="checkbox" name="days" value="tue">Tuesday
+            <input type="checkbox" name="days" value="w">Wednesday
+            <input type="checkbox" name="days" value="thur">Thursday
+            <input type="checkbox" name="days" value="f">Friday
+            <input type="checkbox" name="days" value="sat">Saturday
+            <input type="checkbox" name="days" value="s">Sunday
+            <br>
+            <textarea name="comment" cols="30" rows="10">Enter additional comments here.</textarea>
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>
