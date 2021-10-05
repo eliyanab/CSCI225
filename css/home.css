@@ -1,0 +1,160 @@
+/* Positioning */
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 200px repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.assignment{
+    grid-column: 1;
+    grid-row: 2;
+}
+.introduction{
+    grid-column: 2/6;
+    grid-row: 2/4;
+}
+.portfolio{
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
+.contact{
+    grid-column: 1;
+    grid-row: 3;
+}
+.schedule{
+    grid-column: 4/6;
+    grid-row: 4/5;
+}
+.navbar{
+    grid-column: 1/6;
+    grid-row: 1;
+}
+
+
+
+/* Font, Color */
+p{
+    font-family: 'Libre Baskerville', serif;
+}
+ul{
+    color: hsl(196, 100%, 27%);
+    font-weight: normal;
+}
+ol{
+    color: hsl(196, 100%, 27%);
+    font-weight: normal;
+}
+
+/* Text */
+h1{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: -10px 10px 15px rgb(65, 74, 94);
+}
+
+/* Paragraph */
+p{
+    line-height: 32px;
+    text-align: left;
+}
+
+/* Link */
+a{
+    text-decoration: none;
+    color: hsl(196, 100%, 27%);
+}
+a:hover{
+    font-weight: bold;
+}
+
+/* List */
+.navbar ul li{ 
+    display: inline-block;
+    width: 200px;
+    background-color: bisque;
+    text-align: center;
+    font-size: large;
+}
+ul{
+    list-style-image: url(../img/star.png);
+}
+
+/* Background Image */
+body{
+    background-image: url(../img/waves.jpeg);
+}
+.footer{
+    background-color: bisque;
+}
+
+/* Border */
+.portfolio{
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+.contact{
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+.schedule{
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+h1{
+    border: 3px solid hsl(45, 94%, 52%);
+    border-radius: 50px;
+}
+
+/* Selector Practice */
+p::first-letter{
+    font-size: 150%;
+}
+.portfolio p:nth-child(1){
+    box-shadow: 10px 5px 5px lightgray;
+}
+tr:nth-child(even){
+    background-color: burlywood;
+}
+
+/* Table */
+table, th, td{
+    border: 1px solid black;
+    padding: 1px;
+    vertical-align: middle;
+    empty-cells: show;
+}
+
+/* Transformation Rule */
+h1{
+    transition: ease-in-out 1s, all 1s;
+}
+h1:hover{
+    transform: scale(1.5);
+}
+
+/* Other Style Rules */
+h1{
+    text-align: center;
+}
+.introduction{
+    background-color: bisque;
+}
+.introduction img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.assignment{
+    background-color: bisque;
+}
+.contact{
+    background-color: bisque;
+}
+.portfolio{
+    background-color: bisque;
+}
+.schedule{
+    background-color: bisque;
+}
