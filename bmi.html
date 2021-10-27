@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bmiStyle.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="form">
+                <h1>English BMI Calculator</h1>
+                <input type="text" id="name" placeholder="Enter your name">
+                <p id="nameMessage">
+
+                </p>
+                <input type="text" id="weight" placeholder="Enter your weight" maxlength="3"> Weight in pounds
+                <br> <br>
+                <input type="text" id="height" placeholder="Enter your height" maxlength="3"> Height in inches
+                <br><br>
+                <select id="agegroup"> 
+                    <option> under 20 </option>
+                    <option> 20-29 </option>
+                    <option> 30-50 </option>
+                    <option> 51-75 </option>
+                    <option> over 75</option>
+                </select> Age
+                <br><br>
+                <input type="button" id="calcbmi" value="Compute BMI">
+                <p id="output">
+                    Your BMI is
+                </p>
+                <p id="linebreak">
+                <br><br><br><br><br><br><br><br>
+                </p>
+                <script>
+                    document.getElementById('name').addEventListener('blur', message, false);
+                    function message(){
+                        var name = document.getElementById('name').value;
+                        document.getElementById('nameMessage').textContent="Hey " + name + "! Thanks for using our BMI calculator";
+                        document.getElementById('linebreak').innerHTML="<br><br><br><br><br><br>";
+                    }
+                    document.getElementById('calcbmi').addEventListener('click', calculate, false);
+                    function calculate(){
+                        var a = document.getElementById('agegroup').selectedIndex;
+                        var w = parseFloat(document.getElementById('weight').value);
+                        var h = parseFloat(document.getElementById('height').value);
+                        if(isNaN(w) || isNaN(h)){
+                            document.getElementById('output').textContent="Please enter valid input";
+                        }
+                        else if(a == 0){
+                            document.getElementById('output').innerHTML="Since your age is under 20, use <a href=\"https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf\"> this percentage chart</a>";
+                        }
+                        else{
+                            var bmi = w/h/h*703;
+                            document.getElementById('output').textContent="Your BMI is " + bmi.toFixed(2);
+                            if(bmi>=28){
+                                document.getElementById('output').textContent="Your BMI is " + bmi.toFixed(2) + ". You are in the overweight or obese category";
+                                window.open("https://www.nhlbi.nih.gov/health/educational/lose_wt/control.htm");
+                            }
+                            if(bmi < 18.5){
+                                document.getElementById('mii').animate([{transform: 'scale(1,1)'},{transform: 'scale(0.5, 1)'}],{duration: 2500, fill:"forwards"});
+                                document.getElementById('bar').animate([{transform: 'translateX(0px)'},{transform: 'translateX(100px)'}],{duration: 2500, fill:"forwards"});
+                            }
+                            else if(bmi < 24.9){
+                                document.getElementById('mii').animate([{transform: 'scale(0.5,1)'},{transform: 'scale(1, 1)'}],{duration: 2500, fill:"forwards"});
+                                document.getElementById('bar').animate([{transform: 'translateX(0px)'},{transform: 'translateX(250px)'}],{duration: 2500, fill:"forwards"});
+                            }
+                            else if(bmi < 29.9){
+                                document.getElementById('mii').animate([{transform: 'scale(0.5,1)'},{transform: 'scale(1.5, 1)'}],{duration: 2500, fill:"forwards"});
+                                document.getElementById('bar').animate([{transform: 'translateX(0px)'},{transform: 'translateX(410px)'}],{duration: 2500, fill:"forwards"});
+                            }
+                            else if(bmi > 29.9){
+                                document.getElementById('mii').animate([{transform: 'scale(0.5,1)'},{transform: 'scale(2, 1)'}],{duration: 2500, fill:"forwards"});
+                                document.getElementById('bar').animate([{transform: 'translateX(0px)'},{transform: 'translateX(530px)'}],{duration: 2500, fill:"forwards"});
+                            }
+                        }
+                    }
+                </script>
+            </div>
+            <div class="demo">
+                <img src="img/Screen Shot 2021-10-26 at 4.37.59 PM.png" alt="bar" id="bar">
+                <p> Underweight&emsp;&emsp;&emsp;&emsp;Normal Weight&emsp;&emsp;&emsp;&emsp;Overweight&emsp;&emsp;&emsp;&emsp;Obese</p>
+                <img src="img/Female_Mii.png" alt="female mii" id="mii">
+            </div>
+        </div>
+    </body>
+</html>

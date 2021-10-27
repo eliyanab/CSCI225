@@ -1,0 +1,45 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+}
+.form{
+    grid-column: 1;
+    grid-row: 1;
+    padding: 20px;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    border-radius: 20px;
+}
+.demo{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    background-color: hsl(161, 81%, 82%);
+    border-radius: 20px;
+    position: relative;
+}
+.demo p{
+    background: linear-gradient(to right, blue, green, red);
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+#mii{
+    width: 40%;
+    height: auto;
+    margin-top: 120px;
+}
+
+#bar{
+    opacity: 0.5;
+    border: 2px solid white;
+    height: 15%;
+    width: auto;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+}
